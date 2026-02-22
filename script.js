@@ -21,7 +21,7 @@ function createParticle() {
     vx: randomBetween(-0.3, 0.3),
     vy: randomBetween(-0.5, -0.1),
     alpha: randomBetween(0.1, 0.6),
-    color: Math.random() > 0.5 ? '0,212,255' : '124,58,237'
+    color: Math.random() > 0.5 ? '233,196,106' : '244,162,97'
   };
 }
 
