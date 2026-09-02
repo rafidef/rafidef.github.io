@@ -1,761 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="0MudRj_z9f_mtfs4zYi1URaJO2dgxhcdUNlYPEmAedg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://rafidef.github.io/" />
+    <!--
+      GitHub Pages cannot serve a real 301 for a user site: no header control,
+      no status code control. A same page instant meta refresh plus a canonical
+      link is the strongest permanent redirect signal this host can produce.
+      Google consolidates on it; other crawlers honour it less consistently.
 
-    <!-- JSON-LD Structured Data — Person schema for Google name search -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Rafid Azhar Adi Saputra",
-      "alternateName": "Rafid Azhar",
-      "url": "https://rafidef.github.io/",
-      "image": "https://rafidef.github.io/pp/pp.jpg",
-      "jobTitle": "DevOps & Cloud Engineer",
-      "description": "Final-year Information Technology student at Telkom University Surabaya specializing in DevOps, Cloud Engineering, and Network Infrastructure.",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Telkom University Surabaya"
-      },
-      "knowsAbout": ["AWS", "Cloudflare", "Docker", "CI/CD", "GitHub Actions", "MikroTik", "Linux"],
-      "sameAs": [
-        "https://www.linkedin.com/in/rafidazhar79",
-        "https://github.com/rafidef"
-      ]
-    }
+      Replace BOTH occurrences of the target origin below if the domain
+      changes again.
+    -->
+    <link rel="canonical" href="https://rafidazhar.dev/" />
+    <meta http-equiv="refresh" content="0; url=https://rafidazhar.dev/" />
+
+    <!--
+      There is deliberately NO "noindex" here, and it must not be added back.
+
+      This page's whole job is to hand the old origin's accumulated ranking
+      signals to the new one. rel=canonical is the instruction that does that:
+      consolidate everything you know about this URL into the target.
+
+      noindex is the opposite instruction. It says drop this page, transfer
+      nothing. Worse, Google warns against pairing it with rel=canonical at
+      all, because canonical consolidates signals into the target and noindex
+      is one of the signals that can travel with them. The bad outcome is
+      rafidazhar.dev inheriting the noindex.
+
+      The old URL still leaves the index on its own: the instant meta refresh
+      reads as a move, and the canonical points the authority at the new home.
+      That is the natural decay a 301 would have produced, which is what we
+      want here.
+    -->
+
+    <!--
+      DO NOT REMOVE. This is the Search Console verification token for the
+      rafidef.github.io property, carried over from the old index.html.
+
+      The Change of Address tool requires the OLD property to still be
+      verified at the moment it runs, and this file is the only page left on
+      that origin. Dropping the tag unverifies the property and silently
+      removes the strongest migration signal available.
+
+      Safe to delete only once Change of Address has completed and the new
+      property is receiving the old property's traffic in the reports.
+    -->
+    <meta
+      name="google-site-verification"
+      content="0MudRj_z9f_mtfs4zYi1URaJO2dgxhcdUNlYPEmAedg"
+    />
+
+    <title>Rafid Azhar | DevOps &amp; Cloud Engineer</title>
+
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        font: 400 16px/1.6 ui-sans-serif, system-ui, sans-serif;
+        background: #ebeeec;
+        color: #101416;
+        text-align: center;
+      }
+      a { color: inherit; font-weight: 600; }
+      .mark { font-family: ui-monospace, monospace; color: #4e5a56; }
+      .dot { color: #4a6104; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #101416; color: #e8ecea; }
+        .mark { color: #93a19f; }
+        .dot { color: #c3ec3f; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="mark">&lt;rafidazhar<span class="dot">.</span>dev/&gt;</p>
+      <p>This site has moved to <a href="https://rafidazhar.dev/">rafidazhar.dev</a>.</p>
+    </main>
+
+    <!-- Belt and braces for clients that ignore the meta refresh. -->
+    <script>
+      location.replace("https://rafidazhar.dev/");
     </script>
-
-
-    <meta name="description"
-        content="Rafid Azhar Adi Saputra – DevOps & Cloud Engineer Portfolio. AWS, CI/CD, Docker, Kubernetes specialist." />
-
-    <!-- Open Graph / WhatsApp / LinkedIn preview -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rafidef.github.io/" />
-    <meta property="og:title" content="Rafid Azhar | DevOps & Cloud Engineer" />
-    <meta property="og:description"
-        content="Final-year IT student at Telkom University Surabaya. Hands-on experience in AWS, Cloudflare, Docker, CI/CD pipelines, and network infrastructure engineering." />
-    <meta property="og:image" content="https://rafidef.github.io/pp/pp.jpg" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="800" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Rafid Azhar | DevOps & Cloud Engineer" />
-    <meta name="twitter:description"
-        content="Final-year IT student at Telkom University Surabaya. Hands-on experience in AWS, Cloudflare, Docker, CI/CD, and networking." />
-    <meta name="twitter:image" content="https://rafidef.github.io/pp/pp.jpg" />
-    <title>Rafid Azhar | DevOps & Cloud Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-    <!-- ── NAV ─────────────────────────────────────── -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="mono">&lt;</span>rafid<span class="accent">.</span>dev<span class="mono">/&gt;</span>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#organizations">Organizations</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ── HERO ─────────────────────────────────────── -->
-    <section id="hero">
-        <div class="hero-bg">
-            <canvas id="particleCanvas"></canvas>
-            <div class="grid-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge"><span class="pulse-dot"></span> Open to Opportunities</div>
-            <h1 class="hero-name">Rafid Azhar<br /><span class="gradient-text">Adi Saputra</span></h1>
-            <div class="hero-roles">
-                <span class="role-tag"><svg viewBox="0 0 24 24">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                        <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>DevOps Engineer</span>
-                <span class="role-tag"><svg viewBox="0 0 24 24">
-                        <path d="M18 10h-4V6h-2v4h-4v2h4v6h2v-6h4z" />
-                        <path d="M2 6a4 4 0 1 1 4 4H2V6zM22 6a4 4 0 1 0-4 4h4V6zM12 22a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-                    </svg>Cloud Engineer</span>
-                <span class="role-tag"><svg viewBox="0 0 24 24">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                        <line x1="8" y1="21" x2="16" y2="21" />
-                        <line x1="12" y1="17" x2="12" y2="21" />
-                    </svg>Network Engineer</span>
-            </div>
-            <p class="hero-desc">Final‑year IT student at Telkom University Surabaya with hands‑on experience in AWS
-                cloud infrastructure, CI/CD automation, Docker containerization, Cloudflare DNS & storage, and network
-                engineering.</p>
-            <div class="hero-actions">
-                <a href="cv/CV Ats.pdf" download class="btn btn-primary">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    Download CV
-                </a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years in IT</span></div>
-                <div class="stat-divider"></div>
-                <div class="stat"><span class="stat-num">AWS</span><span class="stat-label">Certified Skills</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Certifications</span></div>
-            </div>
-        </div>
-        <div class="hero-avatar">
-            <div class="avatar-ring"></div>
-            <div class="avatar-ring ring2"></div>
-            <img src="pp/pp.jpg" alt="Rafid Azhar Adi Saputra" class="avatar-img" />
-            <div class="avatar-badge aws"><img
-                    src="https://img.icons8.com/?size=100&id=wU62u24brJ44&format=png&color=000000" alt="AWS"
-                    width="24" /></div>
-            <div class="avatar-badge docker"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker"
-                    width="24" /></div>
-            <div class="avatar-badge linux"><img src="https://img.icons8.com/color/48/linux--v1.png" alt="Linux"
-                    width="24" /></div>
-        </div>
-        <div class="scroll-hint">
-            <span>Scroll to explore</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- ── ABOUT ─────────────────────────────────────── -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">01 // about</span>
-                <h2>Who Am I</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I'm a <strong>Final‑year Information Technology student</strong> at Telkom University Surabaya
-                        with a GPA of 3.56/4.00, specializing in <span class="highlight">DevOps, Cloud Engineering, and
-                            Network Infrastructure</span>.</p>
-                    <p>During my internship at <strong>PT Raja Teknologi Digital</strong>, I migrated production apps to
-                        <span class="highlight">AWS Lightsail</span> with zero downtime, built <span
-                            class="highlight">GitHub Actions</span> deployment workflows for multiple services,
-                        containerized apps with <span class="highlight">Docker</span>, configured <span
-                            class="highlight">Cloudflare R2</span> storage and DNS, managed <span class="highlight">Zoho
-                            SMTP</span> for email delivery, and migrated message brokering to <span
-                            class="highlight">AWS SQS</span>.
-                    </p>
-                    <p>I hold <strong>MTCNA</strong> (MikroTik Certified Network Associate) and <strong>BNSP Junior
-                            Network Engineer</strong> certifications, bridging solid networking fundamentals with modern
-                        cloud automation skills.</p>
-                    <div class="about-info">
-                        <div class="info-item"><span class="info-label">Location</span><span class="info-val">Ponorogo,
-                                East Java</span></div>
-                        <div class="info-item"><span class="info-label">Education</span><span class="info-val">Telkom
-                                University Surabaya</span></div>
-                        <div class="info-item"><span class="info-label">GPA</span><span class="info-val">3.56 /
-                                4.00</span></div>
-                        <div class="info-item"><span class="info-label">Status</span><span class="info-val">Open to
-                                Work</span></div>
-                    </div>
-                </div>
-                <div class="about-terminal">
-                    <div class="terminal-header">
-                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                        <span class="terminal-title">rafid@devops:~</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
-                        <div class="t-line t-output">rafid-azhar</div>
-                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat profile.json</span>
-                        </div>
-                        <div class="t-line t-output">{</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"role": "DevOps &amp; Cloud Engineer",</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"university": "Telkom Univ. Surabaya",</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"gpa": 3.56,</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"cloud": ["AWS", "GCP", "Azure"],</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"devops": ["Docker","CI/CD","Cloudflare"],</div>
-                        <div class="t-line t-output">&nbsp;&nbsp;"network": ["MikroTik","Cisco","MTCNA"]</div>
-                        <div class="t-line t-output">}</div>
-                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor">▋</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── EXPERIENCE ─────────────────────────────────── -->
-    <section id="experience" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">02 // experience</span>
-                <h2>Work Experience</h2>
-            </div>
-            <div class="timeline">
-
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div>
-                                <h3 class="exp-role">DevOps Engineer <span class="badge">Internship</span></h3>
-                                <p class="exp-company">PT Raja Teknologi Digital</p>
-                            </div>
-                            <span class="exp-date">Sep 2025 – Feb 2026</span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Orchestrated the migration of production applications to <strong>AWS Lightsail</strong>,
-                                ensuring optimized infrastructure and a seamless transition with <strong>zero
-                                    downtime</strong>.</li>
-                            <li>Designed and maintained <strong>GitHub Actions</strong> workflows for automated
-                                deployment across multiple repositories (Backend, Frontend, and Worker services),
-                                enhancing security by restricting direct server root access.</li>
-                            <li>Containerized fullstack applications using <strong>Docker</strong>, implementing
-                                dedicated virtual networks for database services to ensure isolation and system
-                                reliability.</li>
-                            <li>Configured <strong>Cloudflare R2</strong> for high-performance, zero-egress object
-                                storage and managed complex DNS records including CNAME and proxied configurations for
-                                production domains.</li>
-                            <li>Implemented and managed dedicated <strong>Zoho SMTP</strong> servers for application
-                                email verification, eliminating bot registrations and improving delivery rates.</li>
-                            <li>Migrated message brokering from <strong>RabbitMQ to AWS SQS</strong> to reduce
-                                operational overhead.</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span>AWS Lightsail</span><span>GitHub Actions</span><span>Docker</span><span>AWS
-                                SQS</span><span>Cloudflare R2</span><span>Zoho
-                                SMTP</span><span>DNS</span><span>CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="exp-header">
-                            <div>
-                                <h3 class="exp-role">Network Engineer <span class="badge badge-gray">Internship</span>
-                                </h3>
-                                <p class="exp-company">PT Globalindo Pandawa Teknologi</p>
-                            </div>
-                            <span class="exp-date">Aug – Oct 2021</span>
-                        </div>
-                        <ul class="exp-list">
-                            <li>Installed and managed CCTV and Door Lock systems at <strong>PT Telkom Indonesia</strong>
-                                (South Jakarta).</li>
-                            <li>Installed, monitored and managed network infrastructure at <strong>PT Datacenter
-                                    Indonesia</strong>.</li>
-                            <li>Trained in splicing and connecting <strong>Fiber Optic</strong> cables.</li>
-                        </ul>
-                        <div class="exp-tags">
-                            <span>Networking</span><span>CCTV</span><span>Fiber Optic</span><span>Infrastructure</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ── SKILLS ─────────────────────────────────────── -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">03 // skills</span>
-                <h2>Technical Stack</h2>
-            </div>
-            <div class="skills-grid">
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon cloud-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-                        </svg>
-                    </div>
-                    <h3>Cloud Platforms</h3>
-                    <div class="skill-pills">
-                        <span class="pill pill-aws">AWS</span>
-                        <span class="pill pill-gcp">Google Cloud</span>
-                        <span class="pill pill-azure">Azure</span>
-                        <span class="pill">AWS Lightsail</span>
-                        <span class="pill">AWS SQS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon devops-icon">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <h3>DevOps & CI/CD</h3>
-                    <div class="skill-pills">
-                        <span class="pill">Docker</span>
-                        <span class="pill">GitHub Actions</span>
-                        <span class="pill">CI/CD Pipelines</span>
-                        <span class="pill">Git/GitHub</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon linux-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Operating Systems</h3>
-                    <div class="skill-pills">
-                        <span class="pill">Debian Linux</span>
-                        <span class="pill">Arch Linux</span>
-                        <span class="pill">Ubuntu Server</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon net-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="2" />
-                            <path
-                                d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
-                        </svg>
-                    </div>
-                    <h3>Networking</h3>
-                    <div class="skill-pills">
-                        <span class="pill">MikroTik</span>
-                        <span class="pill">Cisco Router</span>
-                        <span class="pill">Cisco Packet Tracer</span>
-                        <span class="pill">Winbox</span>
-                        <span class="pill">Fiber Optic</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon virt-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="8" height="8" rx="1" />
-                            <rect x="14" y="2" width="8" height="8" rx="1" />
-                            <rect x="2" y="14" width="8" height="8" rx="1" />
-                            <rect x="14" y="14" width="8" height="8" rx="1" />
-                        </svg>
-                    </div>
-                    <h3>Virtualization</h3>
-                    <div class="skill-pills">
-                        <span class="pill">VirtualBox</span>
-                        <span class="pill">VMware</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos>
-                    <div class="skill-cat-icon soft-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <h3>Soft Skills</h3>
-                    <div class="skill-pills">
-                        <span class="pill">Communication</span>
-                        <span class="pill">Teamwork</span>
-                        <span class="pill">Curiosity</span>
-                        <span class="pill">Leadership</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ── ORGANIZATIONS ─────────────────────────────────── -->
-    <section id="organizations" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">04 // organizations</span>
-                <h2>Organizational Experience</h2>
-            </div>
-            <div class="org-grid">
-
-                <div class="org-card" data-aos>
-                    <div class="org-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                        </svg>
-                    </div>
-                    <div class="org-info">
-                        <h3>Coordinator — Web Dev & Infrastructure</h3>
-                        <p class="org-org">HIMATISI – CODE Challenge 2025</p>
-                        <span class="org-date">Jun 2025 – Aug 2025</span>
-                        <ul class="org-list">
-                            <li>Configured and managed server infrastructure for a competition dashboard and <strong>CTF
-                                    platform</strong>, achieving <strong>100% uptime</strong>.</li>
-                            <li>Implemented a dedicated <strong>SMTP server</strong> for email verification, eliminating
-                                bot registrations and ensuring zero email delivery failures.</li>
-                            <li>Deployed CTF challenges and monitored server health in real‑time for a stable and fair
-                                competition environment.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org-card" data-aos>
-                    <div class="org-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="8" r="6" />
-                            <line x1="12" y1="14" x2="12" y2="22" />
-                            <line x1="8" y1="18" x2="16" y2="18" />
-                        </svg>
-                    </div>
-                    <div class="org-info">
-                        <h3>Treasurer of PSDM</h3>
-                        <p class="org-org">HIMATISI</p>
-                        <span class="org-date">Feb 2024 – Jul 2025</span>
-                        <ul class="org-list">
-                            <li>Arranged and reminded PSDM staff on cash payments.</li>
-                            <li>Discussed and conveyed campus financial policies with BPH HIMATISI staff.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org-card" data-aos>
-                    <div class="org-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                            <rect x="4" y="10" width="16" height="10" />
-                        </svg>
-                    </div>
-                    <div class="org-info">
-                        <h3>Chief Executive — Junior Staff Recruitment</h3>
-                        <p class="org-org">HIMATISI</p>
-                        <span class="org-date">Apr 2024</span>
-                        <ul class="org-list">
-                            <li>Developed and designed the recruitment mechanism for selecting and onboarding junior
-                                staff.</li>
-                            <li>Selected and assigned junior staff to appropriate departments based on their skills and
-                                talents.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org-card" data-aos>
-                    <div class="org-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <div class="org-info">
-                        <h3>Chief Executive — Makrab 2024</h3>
-                        <p class="org-org">HIMATISI</p>
-                        <span class="org-date">Aug 2024 - Sep 2024</span>
-                        <ul class="org-list">
-                            <li>Designed, planned, and set objectives for the 2024 welcoming event to foster stronger
-                                connections among new students.</li>
-                            <li>Developed event planning and rundown to ensure successful execution.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">05 // certifications</span>
-                <h2>Certifications & Awards</h2>
-            </div>
-            <div class="cert-list">
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">01</span>
-                    <div class="cert-dot-icon cb"><svg viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>MTCNA</h3>
-                        <p>MikroTik Certified Network Associate</p>
-                    </div>
-                    <span class="cert-date-badge">Nov 2020 – May 2024</span>
-                    <a href="certificate/mikrotik mtcna.pdf" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">02</span>
-                    <div class="cert-dot-icon cg"><svg viewBox="0 0 24 24">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>BNSP – Network Technician</h3>
-                        <p>Badan Nasional Sertifikasi Profesi</p>
-                    </div>
-                    <span class="cert-date-badge">May 2022 – May 2025</span>
-                    <a href="certificate/BNSP Network Technician.jpeg" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">03</span>
-                    <div class="cert-dot-icon cp"><svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8v4l3 3" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>TOEIC</h3>
-                        <p>Test of English for International Communication</p>
-                    </div>
-                    <span class="cert-date-badge">Feb 2022</span>
-                    <span class="cert-view-btn cert-no-link"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></span>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">04</span>
-                    <div class="cert-dot-icon cgo"><svg viewBox="0 0 24 24">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>1st Place — CTF Competition</h3>
-                        <p>Capture The Flag – HIMATISI</p>
-                    </div>
-                    <span class="cert-date-badge">2024</span>
-                    <a href="certificate/Juara 1 CTF.jpeg" target="_blank" class="cert-view-btn" aria-label="View"><svg
-                            viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">05</span>
-                    <div class="cert-dot-icon co"><svg viewBox="0 0 24 24">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>Laboratory Assistant — Computer Networks Labs</h3>
-                        <p>Telkom University Surabaya</p>
-                    </div>
-                    <span class="cert-date-badge">2025</span>
-                    <a href="certificate/Aslab Jaringan Komputer.pdf" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">06</span>
-                    <div class="cert-dot-icon ct"><svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>Practicum Assistant — Computer Networks</h3>
-                        <p>Telkom University Surabaya</p>
-                    </div>
-                    <span class="cert-date-badge">2025</span>
-                    <a href="certificate/Asprak jaringan komputer.pdf" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">07</span>
-                    <div class="cert-dot-icon ci"><svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>Practicum Assistant — Operating Systems</h3>
-                        <p>Telkom University Surabaya</p>
-                    </div>
-                    <span class="cert-date-badge">2025</span>
-                    <a href="certificate/Asprak sistem operasi.pdf" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-                <div class="cert-row" data-aos>
-                    <span class="cert-num">08</span>
-                    <div class="cert-dot-icon cgo"><svg viewBox="0 0 24 24">
-                            <path d="M18 10h-4V6h-2v4h-4v2h4v6h2v-6h4z" />
-                            <path d="M2 6a4 4 0 1 1 4 4H2V6z" />
-                        </svg></div>
-                    <div class="cert-main">
-                        <h3>Coordinator — Web Dev & Infrastructure</h3>
-                        <p>CODE Challenge 2025 – HIMATISI</p>
-                    </div>
-                    <span class="cert-date-badge">2025</span>
-                    <a href="certificate/koordinator web infra.jpeg" target="_blank" class="cert-view-btn"
-                        aria-label="View"><svg viewBox="0 0 24 24">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg></a>
-                </div>
-
-            </div>
-    </section>
-
-
-    <!-- ── EDUCATION ─────────────────────────────────── -->
-    <section id="education" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">06 // education</span>
-                <h2>Education</h2>
-            </div>
-            <div class="edu-grid">
-                <div class="edu-card" data-aos>
-                    <div class="edu-icon">🎓</div>
-                    <div class="edu-info">
-                        <h3>Telkom University Surabaya</h3>
-                        <p class="edu-degree">Bachelor of Information Technology</p>
-                        <p class="edu-gpa">GPA: 3.56 / 4.00</p>
-                        <span class="edu-date">Aug 2022 – Present</span>
-                    </div>
-                </div>
-                <div class="edu-card" data-aos>
-                    <div class="edu-icon">📚</div>
-                    <div class="edu-info">
-                        <h3>SMK Madinatulquran Bogor</h3>
-                        <p class="edu-degree">Computer & Network Engineering (TKJ)</p>
-                        <span class="edu-date">Jul 2019 – Jun 2022</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── CONTACT ─────────────────────────────────── -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag mono">07 // contact</span>
-                <h2>Get In Touch</h2>
-                <p class="section-sub">I'm actively looking for opportunities. Whether you have a question or just want
-                    to say hi — my inbox is always open.</p>
-            </div>
-            <div class="contact-grid">
-                <a class="contact-card" data-aos data-ct="znvygb" data-cv="ensvq1841@tznvy.pbz">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                    </div>
-                    <div class="contact-info">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-val"
-                            id="contact-email">&#114;&#97;&#102;&#105;&#100;&#49;&#56;&#52;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</span>
-                    </div>
-                </a>
-                <a class="contact-card" data-aos data-ct="gry" data-cv="+6281238145369">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                    </div>
-                    <div class="contact-info">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-val" id="contact-phone">+62 812&#8209;3814&#8209;5369</span>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/rafidazhar79" target="_blank" class="contact-card" data-aos>
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect x="2" y="9" width="4" height="12" />
-                            <circle cx="4" cy="4" r="2" />
-                        </svg>
-                    </div>
-                    <div class="contact-info">
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-val">rafidazhar79</span>
-                    </div>
-                </a>
-            </div>
-            <div class="contact-cta" data-aos>
-                <a href="cv/CV Ats.pdf" download class="btn btn-primary btn-lg">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    Download Full CV
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── FOOTER ─────────────────────────────────── -->
-    <footer>
-        <div class="container footer-inner">
-            <p class="footer-logo"><span class="mono">&lt;</span>rafid<span class="accent">.</span>dev<span
-                    class="mono">/&gt;</span></p>
-            <p class="footer-copy">© 2025 Rafid Azhar Adi Saputra · Built with ❤️ &amp; ☁️</p>
-            <p class="footer-copy mono">Ponorogo, East Java, Indonesia</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
